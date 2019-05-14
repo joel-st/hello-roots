@@ -1,11 +1,13 @@
+// this Task does no work yet
+
+import gulp from 'gulp';
+
 import browserSync from 'browser-sync';
-import gulpif from 'gulp-if';
-import argv from 'yargs';
 
-module.exports = function(key, config, gulp, $, errorLog) {
-	return function() {
+export const task = config => {
+	return function () {
 
-		let flags = process.argv;
+		const flags = process.argv;
 
 		if (flags.length > 4) {
 			console.log('\nLOG: ====> to many flags (gulp server --localsiteurltoserve.com)\n');
@@ -13,11 +15,10 @@ module.exports = function(key, config, gulp, $, errorLog) {
 			console.log('\nLOG: ====> specify local site url to serve (gulp server --localsiteurltoserve.com)\n');
 		} else {
 
-			let url = flags[3].substring(2);
-
+			const url = flags[3].substring(2);
 			console.log('\nSuccess: ====> ' + url + ' will be served!)\n');
 
-			let files = [
+			const files = [
 				'js/**/*.js',
 				'css/**/*.css',
 				'**/*.php',
@@ -31,8 +32,6 @@ module.exports = function(key, config, gulp, $, errorLog) {
 					target: url
 				}
 			});
-
 		}
-
 	}
-}
+};
