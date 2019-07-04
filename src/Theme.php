@@ -2,8 +2,6 @@
 
 namespace SayHello\Theme;
 
-use SayHello\Theme\Package\Helpers;
-
 /**
  * Theme class which gets loaded in functions.php.
  * Defines the Starting point of the Theme and registers Packages.
@@ -73,6 +71,7 @@ class Theme
 				\SayHello\Theme\Package\BodyClass::class,
 				\SayHello\Theme\Package\CustomPages::class,
 				\SayHello\Theme\Package\Error::class,
+				\SayHello\Theme\Package\Gutenberg::class,
 				\SayHello\Theme\Package\Language::class,
 				\SayHello\Theme\Package\Lazysizes::class,
 				\SayHello\Theme\Package\LoginScreen::class,
